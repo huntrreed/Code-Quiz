@@ -1,0 +1,36 @@
+:root {
+    --main: rgb(4, 52, 120);
+    --background: rgb(245, 240, 232);
+    --dark:rgb(4, 139, 4);
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+body {
+    background-color: chocolate;
+}
+
+/*Start Button Styling*/
+.start-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+}
+
+.start-button button{
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--dark);
+    background-color: var(--background);
+    padding: 15px 15px;
+    border:4px;
+    border-color: chocolate;
+    border-radius: 10px;
+
+}
+
+.pre-quiz-box {
+    width: 70vh;
+    
+}
