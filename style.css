@@ -11,7 +11,8 @@ body {
 }
 
 /*Start Button Styling*/
-.start-button{
+.start-button, 
+.Pre-Quiz-Box{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,7 +31,35 @@ body {
 
 }
 
-.pre-quiz-box {
-    width: 70vh;
-    
+.Pre-Quiz-Box {
+    width: 400px;
+    background-color: var(--dark);
+    border-radius: 8px;
 }
+
+.Pre-Quiz-Box .pre-quiz-header{
+    height: 40px;
+    width: 280px;
+    border-bottom: 3px solid var(--main);
+    display: flex;
+    align-items: center;
+    padding-left: 30%;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Pre-Quiz-Box .pre-quiz-list{
+    padding: 15px 25px;
+
+}
+
+.Pre-Quiz-Box .pre-quiz-list .pre-quiz-info{
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.Pre-Quiz-Box .pre-quiz-list .pre-quiz-info{
+    font-weight: 300;
+    color: white;
+
+} 
