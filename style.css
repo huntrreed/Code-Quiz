@@ -14,7 +14,7 @@ body {
 .start-button, 
 .Pre-Quiz-Box{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50% -50%);
 }
@@ -35,6 +35,7 @@ body {
     width: 400px;
     background-color: var(--dark);
     border-radius: 8px;
+    display:none;
 }
 
 .Pre-Quiz-Box .pre-quiz-header{
@@ -63,3 +64,28 @@ body {
     color: white;
 
 } 
+
+.Pre-Quiz-Box .button{
+    height: 40px;
+    width: 159px;
+    display: flex;
+    align-items: center;
+    padding-left: 60%;
+    border-top: 3px solid var(--main);
+}
+
+.Pre-Quiz-Box .button .continue{
+    height: 30px;
+    width: 150px;
+    background-color: white;
+    border-radius:5px;
+    color: var(--main);
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.Pre-Quiz-Box button.continue:hover{
+    color: var(--dark);
+    background:var(--background);
+}
