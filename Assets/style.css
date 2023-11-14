@@ -1,42 +1,69 @@
 :root {
     --main: rgb(4, 52, 120);
     --background: rgb(245, 240, 232);
-    --dark:rgb(4, 139, 4);
+    --dark: rgb(4, 139, 4);
+    --question-color: teal;
+    --answer-color: maroon;
     font-family: Arial, Helvetica, sans-serif;
-
-
 }
+
 body {
-    background-color: chocolate;
-}
-
-/*Start Button Styling*/
-.start-button, 
-.Pre-Quiz-Box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50% -50%);
-}
-
-.start-button button{
-    font-size: 30px;
-    font-weight: 400;
+    background-color: rgb(232, 214, 180);
     color: var(--dark);
-    background-color: var(--background);
-    padding: 15px 15px;
-    border:4px;
-    border-color: chocolate;
-    border-radius: 10px;
-
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
+
+/* Button Styling */
+button {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    background-color: var(--dark);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: var(--main);
+}
+
+/* Start Button and Pre-Quiz Box Styling */
+#start-button, 
+#preQuizBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    width: auto;
+    display: none;
+}
+
+/* Pre-Quiz Box Styling */
+.Pre-Quiz-Box {
+    width: 400px;
+    background-color: var(--dark);
+    border-radius: 8px;
+    display: none;
+    padding: 15px;
+    color: white;
+} 
+
+
 
 .Pre-Quiz-Box {
     width: 400px;
     background-color: var(--dark);
     border-radius: 8px;
     display:none;
-}
+} */ 
 
 .Pre-Quiz-Box .pre-quiz-header{
     height: 40px;
@@ -88,4 +115,117 @@ body {
 .Pre-Quiz-Box button.continue:hover{
     color: var(--dark);
     background:var(--background);
+} 
+
+/* Quiz Question Box Styling */
+#quizQuestion {
+    display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 60%;
+    max-width: 600px;
+}
+
+#quizQuestion h2 {
+    color: var(--question-color);
+    font-weight: bold;
+}
+
+#quizQuestion button {
+    background-color: var(--background);
+    color: var(--answer-color);
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+
+/* Final Score Display */
+.final-score {
+    font-size: 24px;
+    color: var(--main);
+    font-weight: bold;
+}
+
+/* Timer Display */
+.timer {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 20px;
+    background: var(--background);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+ 
+
+/* Start Button and Pre-Quiz Box Styling */
+/* #start-button, 
+#preQuizBox {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#start-button button {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--dark);
+    background-color: var(--background);
+    padding: 15px 15px;
+    border: 4px solid chocolate;
+    border-radius: 10px;
+    cursor: pointer;
+} */
+
+/* Quiz Question Box Styling */
+/* #quizQuestion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    max-width: 600px;
+}
+
+#quizQuestion h2 {
+    color: var(--question-color);
+    font-weight: bold;
+}
+
+#quizQuestion button {
+    /* display: block; /* Stack buttons */
+    /* margin: 10px auto; /* Centering buttons */
+    /* background-color: var(--background);
+    color: var(--answer-color);
+    border: 2px solid var(--dark);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+/* Hover effect for answer buttons */
+/* #quizQuestion button:hover {
+    background-color: var(--dark);
+    color: white;
+} */ */
+
+/* Styling for the final score display */
+/* .final-score {
+    font-size: 24px;
+    color: var(--main);
+    font-weight: bold;
 }
