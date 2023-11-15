@@ -49,6 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
   let timerCount = 80; // Starting time for the timer
   let timer; // Timer variable
 
+
+  function addScore() {
+    let initialsInput = document.getElementById('initialsInput');
+    let initials = initialsInput.value;
+    if (initials) {
+        saveScore(initials, timerCount);
+        displayFinalScore(); // Refresh and display updated high scores
+    } else {
+        alert("Please enter your initials!");
+    }
+}
+
   // Initially hide the start button and timer until the rules are gone
   startButton.style.display = 'none';
   timerElement.style.display = 'none';
@@ -91,32 +103,64 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       // Move to the next question or display final score at the end
       currentQuestionIndex++;
-      if (currentQuestionIndex < quizQuestions.length) {
-          displayQuestion();
-      } else {
-          displayFinalScore();
-      }
-  }
+        if (currentQuestionIndex < quizQuestions.length) {
+            displayQuestion();
+        } else {
+            displayFinalScore();
+        }
+    }
 
-  // Function to display the final score
-  function displayFinalScore() {
-      quizQuestionDiv.innerHTML = `<h2>Your score is: ${timerCount}</h2>`;
-      clearInterval(timer);
-  }
+    // Function to display the final score
+    function displayFinalScore() {
+        clearInterval(timer);
 
-  // Event listener for the "Got it!" button in the rules box
-  gotItButton.addEventListener('click', function () {
-      preQuizBox.style.display = 'none';
+        // Display final score
+        quizQuestionDiv.innerHTML = `<h2>Your score is: ${timerCount}</h2>`;
 
-      // Show the start button and timer when the rules are gone
-      startButton.style.display = 'block';
-      timerElement.style.display = 'block';
-  });
+        // Display past high scores
+        displayPastScores();
 
-  // Event listener to start the timer and show the questions
-  startButton.addEventListener('click', function () {
-      startTimer();
-      displayQuestion();
-      startButton.style.display = 'none';
-  });
+        // Input for initials and submit button
+        const inputHTML = '<input type="text" id="initialsInput" placeholder="Your Initials">';
+        const buttonHTML = '<button onclick="addScore()">Add my Score</button>';
+
+        // Append these to the quizQuestionDiv
+        quizQuestionDiv.innerHTML += inputHTML + buttonHTML;
+    }
+
+  
+
+    // Function to display past scores
+    function displayPastScores() {
+        let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+        scores.sort((a, b) => b.score - a.score);
+        let scoreList = "<h3>High Scores:</h3><ul>";
+
+        scores.forEach(score => {
+            scoreList += `<li>${score.initials}: ${score.score}</li>`;
+        });
+
+        scoreList += "</ul>";
+        quizQuestionDiv.innerHTML += scoreList;
+    }
+
+    // Function to save score in localStorage
+    function saveScore(initials, score) {
+        let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+        scores.push({ initials: initials, score: score });
+        localStorage.setItem("quizScores", JSON.stringify(scores));
+    }
+
+    // Event listeners for pre-quiz and start button
+    gotItButton.addEventListener('click', function () {
+        preQuizBox.style.display = 'none';
+        startButton.style.display = 'block';
+        timerElement.style.display = 'block';
+    });
+
+    startButton.addEventListener('click', function () {
+        startTimer();
+        displayQuestion();
+        startButton.style.display = 'none';
+    });
 });

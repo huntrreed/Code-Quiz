@@ -63,7 +63,7 @@ button:hover {
     background-color: var(--dark);
     border-radius: 8px;
     display:none;
-} */ 
+} 
 
 .Pre-Quiz-Box .pre-quiz-header{
     height: 40px;
@@ -167,7 +167,7 @@ button:hover {
 
  
 
-/* Start Button and Pre-Quiz Box Styling */
+/* /Still working* Start Button and Pre-Quiz Box Styling */ */
 /* #start-button, 
 #preQuizBox {
     position: absolute;
@@ -221,7 +221,7 @@ button:hover {
 /* #quizQuestion button:hover {
     background-color: var(--dark);
     color: white;
-} */ */
+} */ 
 
 /* Styling for the final score display */
 /* .final-score {
